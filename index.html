@@ -13,16 +13,15 @@
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <div class="announcement"><span class="status-dot"></span> Projetos digitais para negócios que querem avançar</div>
+  <div class="announcement"><span class="status-dot"></span> Sites e soluções digitais para negócios que querem avançar</div>
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="Yan Serra Sites e Marcas, início">
-      <span class="brand-mark">YS<span>.</span></span>
+      <img class="brand-logo" src="assets/logo.svg" alt="Yan Serra Sites e Marcas">
       <span class="brand-copy"><strong>YAN SERRA</strong><small>SITES & MARCAS</small></span>
     </a>
     <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
     <nav class="nav" aria-label="Navegação principal">
       <a href="#servicos">Serviços</a>
-      <a href="#portfolio">Portfólio</a>
       <a href="#sobre">Sobre</a>
       <a class="nav-cta" href="#contato">Solicitar orçamento <span>↗</span></a>
     </nav>
@@ -36,7 +35,7 @@
         <p class="hero-description">Criamos experiências digitais que apresentam seu negócio com profissionalismo e ajudam seus clientes a chegar até você.</p>
         <div class="hero-actions">
           <a class="button button-light" href="#servicos">Conheça os serviços <span>↘</span></a>
-          <a class="text-link" href="#portfolio">Ver projetos <span>↗</span></a>
+          <a class="text-link" href="#servicos">Explorar serviços <span>↘</span></a>
         </div>
         <div class="hero-note"><span class="note-icon">✳</span><span>Projetos sob medida para empresas, comércios e profissionais.</span></div>
       </div>
@@ -67,23 +66,29 @@
       </div>
     </section>
 
-    <section class="portfolio section-wrap section-space" id="portfolio">
+    <section class="pricing section-wrap section-space" id="valores">
       <div class="section-heading">
-        <div><p class="eyebrow"><span class="eyebrow-line"></span> TRABALHOS SELECIONADOS</p><h2>Projetos que saem<br>do <span class="muted-word">papel.</span></h2></div>
-        <p class="section-intro">Cada projeto é uma oportunidade de transformar uma necessidade real em uma experiência digital funcional.</p>
+        <div><p class="eyebrow"><span class="eyebrow-line"></span> VALORES TRANSPARENTES</p><h2>Escolha o serviço<br>e veja <span class="muted-word">o investimento.</span></h2></div>
+        <p class="section-intro">Selecione o que seu negócio precisa. O valor e o que está incluído aparecem aqui, sem caça ao preço.</p>
       </div>
-      <a class="project-card" href="https://martinsconfeitaria.com.br/" target="_blank" rel="noopener noreferrer">
-        <div class="project-visual">
-          <div class="browser-bar"><span></span><span></span><span></span><i>martinsconfeitaria.com.br</i></div>
-          <div class="project-mock">
-            <div class="mock-brand">MARTINS <span>CONFEITARIA</span></div>
-            <div class="mock-content"><small>FEITO COM CUIDADO</small><strong>Um doce momento<br>em cada detalhe.</strong><span class="mock-button">CONHEÇA NOSSO CARDÁPIO ↗</span></div>
-            <div class="mock-cake">M<span>✳</span></div>
-          </div>
+      <div class="pricing-panel">
+        <label for="service-choice">Qual serviço você procura?</label>
+        <select id="service-choice" name="service-choice">
+          <option value="site">Criação de site</option>
+          <option value="complete">Pacote completo: site + publicação</option>
+          <option value="maintenance">Manutenção mensal</option>
+          <option value="menu">Cardápio digital e pedidos</option>
+          <option value="catalog">Catálogo digital</option>
+          <option value="landing">Landing page</option>
+          <option value="system">Sistema sob medida</option>
+        </select>
+        <div class="price-result" aria-live="polite">
+          <div><span class="price-kicker" id="price-kicker">INVESTIMENTO</span><strong id="price-value">R$ 730</strong><p id="price-description">Criação do site. A publicação na internet e a hospedagem não estão incluídas.</p></div>
+          <ul id="price-includes"><li>Site responsivo e personalizado</li><li>Pagamento via Pix</li><li>Domínio contratado pelo cliente, em nome do cliente</li></ul>
         </div>
-        <div class="project-details"><div><span class="project-type">SITE INSTITUCIONAL · CONFEITARIA</span><h3>Martins Confeitaria</h3><p>Site para apresentar a marca e seus produtos, com experiência pensada para os clientes.</p></div><span class="project-arrow">↗</span></div>
-      </a>
-      <p class="portfolio-note"><span>+</span> Este portfólio será ampliado conforme novos projetos forem concluídos e autorizados para divulgação.</p>
+        <p class="pricing-note">Cardápios, catálogos, landing pages e sistemas são avaliados conforme as funcionalidades e o tamanho do projeto. O domínio é pago separadamente pelo cliente.</p>
+        <a class="button button-light pricing-cta" id="pricing-contact" href="https://www.instagram.com/yan.sitesemarcas/" target="_blank" rel="noopener noreferrer">Solicitar este serviço <span>↗</span></a>
+      </div>
     </section>
 
     <section class="about section-space" id="sobre">
@@ -98,6 +103,6 @@
     </section>
   </main>
 
-  <footer class="site-footer section-wrap"><a class="brand" href="#inicio"><span class="brand-mark">YS<span>.</span></span><span class="brand-copy"><strong>YAN SERRA</strong><small>SITES & MARCAS</small></span></a><p>Presença digital construída com intenção.</p><a href="#inicio" class="back-top">VOLTAR AO TOPO ↑</a><div class="footer-bottom"><span>© <span id="year"></span> Yan Serra Sites e Marcas</span><span>FEITO PARA IR ALÉM.</span></div></footer>
+  <footer class="site-footer section-wrap"><a class="brand" href="#inicio"><img class="brand-logo" src="assets/logo.svg" alt="Yan Serra Sites e Marcas"><span class="brand-copy"><strong>YAN SERRA</strong><small>SITES & MARCAS</small></span></a><p>Presença digital construída com intenção.</p><a href="#inicio" class="back-top">VOLTAR AO TOPO ↑</a><div class="footer-bottom"><span>© <span id="year"></span> Yan Serra Sites e Marcas</span><span>FEITO PARA IR ALÉM.</span></div></footer>
 </body>
 </html>
