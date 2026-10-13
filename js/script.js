@@ -78,8 +78,8 @@ function updateServicePrice() {
     return li;
   }));
   if (pricingContact) {
-    const message = encodeURIComponent("Olá! Tenho interesse no serviço: " + serviceChoice.options[serviceChoice.selectedIndex].text + ". Gostaria de conversar sobre os detalhes.");
-    pricingContact.href = "https://www.instagram.com/yan.sitesemarcas/";
+    const message = encodeURIComponent("Olá! Tenho interesse no serviço: " + serviceChoice.options[serviceChoice.selectedIndex].text + ". Gostaria de conversar sobre os detalhes e valores.");
+    pricingContact.href = "https://wa.me/5585988159854?text=" + message;
     pricingContact.setAttribute("aria-label", "Solicitar orçamento para " + serviceChoice.options[serviceChoice.selectedIndex].text);
   }
 }
