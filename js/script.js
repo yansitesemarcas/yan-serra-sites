@@ -22,47 +22,53 @@ const priceIncludes = document.querySelector("#price-includes");
 const pricingContact = document.querySelector("#pricing-contact");
 
 const servicePrices = {
-  site: {
+  landing: {
     kicker: "INVESTIMENTO",
-    value: "R$ 730",
-    description: "Criação do site. A publicação na internet e a hospedagem não estão incluídas.",
-    includes: ["Site responsivo e personalizado", "Pagamento via Pix", "Domínio contratado pelo cliente, em nome do cliente"]
+    value: "R$ 600,00",
+    description: "Página simples, sem muita complexidade, indicada para apresentar um serviço, produto ou oferta.",
+    includes: ["Layout responsivo e personalizado", "Pagamento exclusivamente via Pix", "Hospedagem e domínio por conta do cliente"]
   },
-  complete: {
-    kicker: "PACOTE COMPLETO",
-    value: "R$ 1.280",
-    description: "Site com publicação na internet, hospedagem e 3 meses de manutenção incluídos.",
-    includes: ["Criação e publicação do site", "3 meses de manutenção incluídos", "Adicionais de R$ 50 durante os 3 meses incluídos", "Domínio pago pelo cliente, em nome do cliente"]
+  institutional: {
+    kicker: "INVESTIMENTO",
+    value: "R$ 700,00",
+    description: "Site institucional para apresentar a empresa, seus serviços e um volume maior de informações.",
+    includes: ["Estrutura e conteúdo definidos no escopo", "Pagamento exclusivamente via Pix", "Hospedagem e domínio por conta do cliente"]
+  },
+  menu: {
+    kicker: "INVESTIMENTO",
+    value: "R$ 1.000,00",
+    description: "Cardápio digital com pedidos e painel administrativo. Funcionalidades são definidas no escopo do projeto.",
+    includes: ["Gerenciamento de produtos e informações pelo painel", "Pagamento exclusivamente via Pix", "Hospedagem e domínio por conta do cliente"]
+  },
+  catalog: {
+    kicker: "INVESTIMENTO",
+    value: "R$ 1.000,00",
+    description: "Catálogo digital com painel administrativo para organizar e gerenciar os produtos.",
+    includes: ["Vitrine digital e painel administrativo", "Pagamento exclusivamente via Pix", "Hospedagem e domínio por conta do cliente"]
+  },
+  menuPackage: {
+    kicker: "PACOTE COM MANUTENÇÃO",
+    value: "R$ 1.300,00",
+    description: "Cardápio digital com pedidos e painel, incluindo cinco meses de manutenção e adicionais ilimitados durante esse período, conforme as condições acordadas.",
+    includes: ["Cinco meses de manutenção", "Adicionais ilimitados durante os cinco meses, conforme escopo acordado", "Hospedagem e domínio por conta do cliente"]
+  },
+  catalogPackage: {
+    kicker: "PACOTE COM MANUTENÇÃO",
+    value: "R$ 1.300,00",
+    description: "Catálogo digital com painel, incluindo cinco meses de manutenção e adicionais ilimitados durante esse período, conforme as condições acordadas.",
+    includes: ["Cinco meses de manutenção", "Adicionais ilimitados durante os cinco meses, conforme escopo acordado", "Hospedagem e domínio por conta do cliente"]
   },
   maintenance: {
     kicker: "VALOR MENSAL",
-    value: "R$ 85/mês",
-    description: "Manutenção mensal de um site já desenvolvido. Escopo e condições são alinhados antes do início.",
-    includes: ["Atualizações e ajustes dentro do escopo combinado", "Pagamento via Pix", "Não inclui domínio nem hospedagem"]
-  },
-  menu: {
-    kicker: "ORÇAMENTO PERSONALIZADO",
-    value: "Sob orçamento",
-    description: "O valor depende da quantidade de produtos, categorias e recursos de pedido desejados.",
-    includes: ["Cardápio adaptado para celular", "Produtos, preços e categorias", "Possibilidade de direcionar pedidos ao WhatsApp"]
-  },
-  catalog: {
-    kicker: "ORÇAMENTO PERSONALIZADO",
-    value: "Sob orçamento",
-    description: "O valor depende da quantidade de produtos e de como você quer organizar o catálogo.",
-    includes: ["Vitrine digital organizada", "Informações e imagens dos produtos", "Compartilhamento fácil com clientes"]
-  },
-  landing: {
-    kicker: "ORÇAMENTO PERSONALIZADO",
-    value: "Sob orçamento",
-    description: "O valor depende do conteúdo, das integrações e dos objetivos da página.",
-    includes: ["Página focada em uma oferta ou serviço", "Layout responsivo", "Botões de contato e conversão"]
+    value: "R$ 85,00/mês",
+    description: "Manutenção mensal por mês completo, mediante contratação.",
+    includes: ["Escopo de manutenção combinado previamente", "Pagamento exclusivamente via Pix", "Novas funcionalidades podem ter orçamento separado"]
   },
   system: {
     kicker: "ORÇAMENTO PERSONALIZADO",
-    value: "Após avaliar o projeto",
-    description: "Sistemas são orçados depois de definir as funcionalidades e o nível de complexidade.",
-    includes: ["Escopo definido com o cliente", "Funcionalidades personalizadas", "Prazo e valor apresentados antes do desenvolvimento"]
+    value: "A definir",
+    description: "O escopo e o preço de sistemas personalizados são definidos diretamente com Yan Serra antes do início.",
+    includes: ["Funcionalidades e prazo acordados previamente", "Parcelamento somente mediante negociação", "Hospedagem e domínio por conta do cliente"]
   }
 };
 
@@ -78,7 +84,7 @@ function updateServicePrice() {
     return li;
   }));
   if (pricingContact) {
-    const message = encodeURIComponent("Olá! Tenho interesse no serviço: " + serviceChoice.options[serviceChoice.selectedIndex].text + ". Gostaria de conversar sobre os detalhes e valores.");
+    const message = encodeURIComponent("Olá! Tenho interesse no serviço: " + serviceChoice.options[serviceChoice.selectedIndex].text + ". Gostaria de conversar sobre os detalhes e valores. Forma de pagamento via Pix. Parcelamento e adicionais devem ser definidos previamente com Yan Serra.");
     pricingContact.href = "https://wa.me/5585988159854?text=" + message;
     pricingContact.setAttribute("aria-label", "Solicitar orçamento para " + serviceChoice.options[serviceChoice.selectedIndex].text);
   }
