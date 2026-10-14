@@ -94,3 +94,21 @@
 @keyframes monogram-arrive{to{opacity:1;transform:translateY(0) scale(1)}}
 @media(max-width:560px){.hero-intro{min-height:calc(100svh - 100px);padding:48px 0 85px}.intro-monogram{min-height:140px;margin-bottom:24px;gap:15px}.monogram-y,.monogram-s{font-size:clamp(112px,29vw,145px)}.intro-overline{font-size:7px;letter-spacing:.15em}.hero-intro h1{font-size:clamp(29px,8vw,39px)}.hero-intro .hero-bottom{font-size:6px;letter-spacing:.04em}}
 @media(prefers-reduced-motion:reduce){.monogram-y,.monogram-s,.intro-brand{animation:none;opacity:1;transform:none}}
+
+/* Ajustes de alinhamento, orçamento sob demanda e logo oficial */
+.intro-followup{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.intro-followup.is-visible{opacity:1;transform:translateY(0)}
+.intro-monogram{gap:clamp(18px,4vw,42px);letter-spacing:0}
+.monogram-y,.monogram-s{font-family:var(--display);font-weight:800;letter-spacing:-.09em}
+.quote-form select{width:100%;background:#111;border:1px solid #3b3b3b;border-radius:0;color:#f4f4f0;padding:14px;font:inherit;font-size:12px;outline:none}
+.quote-form select:focus{border-color:#f4f4f0}
+.quote-form select option{background:#111;color:#f4f4f0}
+.selected-service-summary{padding:22px;border:1px solid #4a4a4a;background:#141414}
+.selected-service-summary[hidden]{display:none}
+.selected-service-summary strong{display:block;font-family:var(--display);font-size:clamp(27px,4vw,38px);letter-spacing:-.05em;margin:5px 0 10px}
+.selected-service-summary p{font-size:12px;line-height:1.8;color:#bbb;margin:0 0 9px}
+.selected-service-summary small{font-size:10px;color:#858585}
+.contact-brand-logo{width:clamp(100px,13vw,150px);height:auto;display:block}
+.contact-side{align-items:center;justify-content:center;gap:30px}
+@media(max-width:800px){.contact-brand-logo{width:105px}}
+@media(prefers-reduced-motion:reduce){.intro-followup{transition:none}}
