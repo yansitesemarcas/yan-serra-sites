@@ -112,3 +112,13 @@
 .contact-side{align-items:center;justify-content:center;gap:30px}
 @media(max-width:800px){.contact-brand-logo{width:105px}}
 @media(prefers-reduced-motion:reduce){.intro-followup{transition:none}}
+
+/* Monograma de abertura desenhado com os traços exatos do SVG da marca */
+.intro-monogram{width:clamp(190px,31vw,285px);min-height:0;height:auto;aspect-ratio:75/58;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;gap:0;letter-spacing:normal}
+.monogram-art{display:block;width:100%;height:100%;overflow:visible;color:#f4f4f0;filter:drop-shadow(0 0 20px #ffffff10)}
+.monogram-y,.monogram-s{display:none}
+.footer-logo-link{display:flex;align-items:center;justify-content:flex-start;width:100%;max-width:150px}
+.footer-main-logo{display:block;width:100%;height:auto;max-width:145px}
+.site-footer{align-items:center}
+.site-footer .footer-bottom{align-items:center}
+@media(max-width:560px){.intro-monogram{width:clamp(170px,58vw,225px);margin-bottom:24px}.footer-logo-link{max-width:105px}.footer-main-logo{max-width:105px}}
