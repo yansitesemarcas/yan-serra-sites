@@ -34,10 +34,10 @@
         <div class="intro-monogram" aria-label="Monograma YS da Yan Serra">
           <span class="monogram-y">Y</span><span class="monogram-s">S</span>
         </div>
-        <p class="intro-overline">ESTRATÉGIA · DESIGN · TECNOLOGIA</p>
+        <div class="intro-followup" id="intro-followup"><p class="intro-overline">ESTRATÉGIA · DESIGN · TECNOLOGIA</p>
         <h1>YAN SERRA<br>SITES E MARCAS</h1>
         <p class="intro-description">Pequeno no começo. Grande na intenção.</p>
-        <a class="button button-light intro-button" href="#servicos">Conheça Serviços <span>↘</span></a>
+        <a class="button button-light intro-button" href="#servicos">Conheça Serviços <span>↘</span></a></div>
       </div>
       <div class="hero-bottom"><span>YAN SERRA SITES E MARCAS</span><span>PRESENÇA DIGITAL COM INTENÇÃO <b>↓</b></span></div>
     </section>
@@ -57,27 +57,25 @@
       </div>
     </section>
 
-    <section class="pricing section-wrap section-space" id="valores">
-      <div class="section-heading">
-        <div><p class="eyebrow"><span class="eyebrow-line"></span> INVESTIMENTO</p><h2>Valores claros.<br><span class="muted-word">Projeto bem definido.</span></h2></div>
-        <p class="section-intro">Os valores variam conforme as páginas, funcionalidades e entregas combinadas antes do início do projeto.</p>
-      </div>
-      <div class="price-grid">
-        <article class="price-card"><span class="service-number">01 / LANDING PAGE</span><h3>Landing Page</h3><p>Uma página focada em apresentar uma oferta, produto ou serviço e incentivar o contato.</p><strong>R$ 350–600</strong><a href="#orcamento" class="card-link">Pedir orçamento <span>↗</span></a></article>
-        <article class="price-card"><span class="service-number">02 / INSTITUCIONAL</span><h3>Site Institucional</h3><p>Apresentação profissional da empresa, serviços, diferenciais e formas de contato.</p><strong>R$ 600–900</strong><a href="#orcamento" class="card-link">Pedir orçamento <span>↗</span></a></article>
-        <article class="price-card"><span class="service-number">03 / CARDÁPIO</span><h3>Cardápios e Pedidos</h3><p>Cardápio digital com produtos e preços, com pedidos direcionados ao WhatsApp.</p><strong>R$ 700–1.200</strong><a href="#orcamento" class="card-link">Pedir orçamento <span>↗</span></a></article>
-        <article class="price-card"><span class="service-number">04 / CATÁLOGO</span><h3>Catálogo Digital</h3><p>Vitrine online para organizar produtos e facilitar a consulta e o contato.</p><strong>R$ 300–600</strong><a href="#orcamento" class="card-link">Pedir orçamento <span>↗</span></a></article>
-        <article class="price-card price-card-wide"><span class="service-number">05 / SISTEMAS</span><h3>Site com Sistema ou Painel</h3><p>Projetos com cadastros, matrícula, área administrativa ou outras funcionalidades. O valor final depende do escopo.</p><strong>A partir de R$ 1.200</strong><a href="#orcamento" class="card-link">Descrever meu projeto <span>↗</span></a></article>
-      </div>
-      <p class="pricing-note">Manutenção avulsa: R$ 85,00 por mês completo. Adicionais e funcionalidades extras são definidos previamente com Yan Serra. Hospedagem e domínio ficam por conta do cliente. Pagamento via Pix; parcelamento somente mediante acordo prévio.</p>
-    </section>
+    
+<section class="pricing section-wrap section-space" id="valores">
+  <div class="section-heading">
+    <div><p class="eyebrow"><span class="eyebrow-line"></span> INVESTIMENTO</p><h2>Escolha o serviço.<br><span class="muted-word">Veja o investimento.</span></h2></div>
+    <p class="section-intro">Selecione o tipo de projeto no formulário. O valor aparece depois da escolha, junto das informações necessárias para pedir o orçamento.</p>
+  </div>
+  <a class="button button-light pricing-cta" href="#orcamento">Escolher meu serviço <span>↘</span></a>
+  <p class="pricing-note">Manutenção avulsa: R$ 85,00 por mês completo. Adicionais são definidos previamente. Hospedagem e domínio ficam por conta do cliente. Pagamento via Pix; parcelamento somente mediante acordo prévio.</p>
+</section>
 
 <section class="quote section-wrap section-space" id="orcamento">
       <div class="section-heading">
-        <div><p class="eyebrow"><span class="eyebrow-line"></span> VAMOS CONVERSAR</p><h2>Conte sobre<br><span class="muted-word">seu projeto.</span></h2></div>
+        <div><p class="eyebrow"><span class="eyebrow-line"></span> ESCOLHA E ORÇAMENTO</p><h2>Vamos definir<br><span class="muted-word">seu projeto.</span></h2></div>
         <p class="section-intro">Preencha seus dados e explique o que precisa. As informações serão organizadas em uma mensagem para enviar pelo WhatsApp.</p>
       </div>
       <form class="quote-form" id="quote-form">
+        <div class="form-field form-field-wide"><label for="service-choice">Qual serviço você deseja? *</label><select id="service-choice" name="servico" required><option value="">Selecione um serviço</option><option value="landing">Landing Page</option><option value="institucional">Site Institucional</option><option value="cardapio">Cardápio e Pedidos</option><option value="catalogo">Catálogo Digital</option><option value="sistema">Site com Sistema ou Painel</option></select></div>
+        <div class="selected-service-summary form-field-wide" id="selected-service-summary" hidden aria-live="polite"><span class="price-kicker" id="selected-service-name">SERVIÇO SELECIONADO</span><strong id="selected-service-price"></strong><p id="selected-service-description"></p><small>O valor final será confirmado após definir o escopo e as funcionalidades.</small></div>
+
         <div class="form-field"><label for="client-name">Seu nome *</label><input id="client-name" name="nome" required autocomplete="name" placeholder="Como podemos chamar você?"></div>
         <div class="form-field"><label for="business-name">Nome do estabelecimento / marca *</label><input id="business-name" name="estabelecimento" required placeholder="Nome do seu negócio"></div>
         <div class="form-field"><label for="client-whatsapp">Seu WhatsApp *</label><input id="client-whatsapp" name="whatsapp" required autocomplete="tel" placeholder="(DDD) 9XXXX-XXXX"></div>
@@ -115,7 +113,7 @@
     </section>
 
     <section class="contact section-wrap section-space" id="contato">
-      <div class="contact-panel"><div class="contact-orbit orbit-a"></div><div class="contact-orbit orbit-b"></div><div class="contact-content"><p class="eyebrow"><span class="eyebrow-line"></span> SEU PRÓXIMO PASSO</p><h2>Vamos dar vida<br>à sua <span class="accent-word">ideia.</span></h2><p>Conte o que você precisa. Vamos entender seu projeto e preparar uma proposta adequada ao seu negócio.</p><div class="contact-links"><a class="button button-light" href="https://wa.me/5585988159854" target="_blank" rel="noopener noreferrer">Falar pelo WhatsApp <span>↗</span></a><a class="contact-link" href="https://www.instagram.com/ys.sitesemarcas/" target="_blank" rel="noopener noreferrer">Instagram: @ys.sitesemarcas ↗</a><a class="contact-link" href="mailto:yan.sitesemarcas@gmail.com">yan.sitesemarcas@gmail.com ↗</a></div><p class="contact-small">Yan Serra Sites e Marcas · Fortaleza, Ceará</p></div><div class="contact-side"><span class="side-index">LET'S BUILD SOMETHING USEFUL</span><strong>YS<span>.</span></strong><span class="side-bottom">DESIGN · WEB · SOLUÇÕES</span></div></div>
+      <div class="contact-panel"><div class="contact-orbit orbit-a"></div><div class="contact-orbit orbit-b"></div><div class="contact-content"><p class="eyebrow"><span class="eyebrow-line"></span> SEU PRÓXIMO PASSO</p><h2>Vamos dar vida<br>à sua <span class="accent-word">ideia.</span></h2><p>Conte o que você precisa. Vamos entender seu projeto e preparar uma proposta adequada ao seu negócio.</p><div class="contact-links"><a class="button button-light" href="https://wa.me/5585988159854" target="_blank" rel="noopener noreferrer">Falar pelo WhatsApp <span>↗</span></a><a class="contact-link" href="https://www.instagram.com/ys.sitesemarcas/" target="_blank" rel="noopener noreferrer">Instagram: @ys.sitesemarcas ↗</a><a class="contact-link" href="mailto:yan.sitesemarcas@gmail.com">yan.sitesemarcas@gmail.com ↗</a></div><p class="contact-small">Yan Serra Sites e Marcas · Fortaleza, Ceará</p></div><div class="contact-side"><span class="side-index">LET'S BUILD SOMETHING USEFUL</span><img class="contact-brand-logo" src="assets/logo.svg" alt="Logo original YS da Yan Serra Sites e Marcas"><span class="side-bottom">DESIGN · WEB · SOLUÇÕES</span></div></div>
     </section>
   </main>
 
