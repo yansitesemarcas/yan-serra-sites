@@ -74,14 +74,16 @@ if (serviceChoice) {
   });
 }
 const introFollowup = document.querySelector("#intro-followup");
-if (introFollowup && "IntersectionObserver" in window) {
-  const introObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { introFollowup.classList.add("is-visible"); introObserver.disconnect(); }
-    });
-  }, { threshold: 0.5 });
-  introObserver.observe(introFollowup);
-} else if (introFollowup) introFollowup.classList.add("is-visible");
+if (introFollowup) {
+  const revealIntroDetails = () => {
+    if (window.scrollY > 80) {
+      introFollowup.classList.add("is-visible");
+      window.removeEventListener("scroll", revealIntroDetails);
+    }
+  };
+  window.addEventListener("scroll", revealIntroDetails, {passive:true});
+  revealIntroDetails();
+}
 
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
