@@ -122,3 +122,35 @@
 .site-footer{align-items:center}
 .site-footer .footer-bottom{align-items:center}
 @media(max-width:560px){.intro-monogram{width:clamp(170px,58vw,225px);margin-bottom:24px}.footer-logo-link{max-width:105px}.footer-main-logo{max-width:105px}}
+
+
+/* Contato e rodapé organizados com a identidade original da marca */
+.contact-panel{grid-template-columns:minmax(0,1.45fr) minmax(230px,.55fr);align-items:stretch;background:#080808;color:#f4f4f0;border:1px solid #292929}
+.contact-content{padding:clamp(28px,5vw,58px)}
+.contact-content .eyebrow{color:#c5c5bd}
+.contact-content .eyebrow-line{background:#f4f4f0}
+.contact-content h2{color:#f4f4f0}
+.contact-content .accent-word{color:#a7a79e}
+.contact-content>p:not(.eyebrow):not(.contact-small){color:#b5b5ad}
+.contact-info-list{display:grid;gap:0;margin-top:26px;border-top:1px solid #30302d}
+.contact-info-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px 18px;padding:17px 0;border-bottom:1px solid #30302d;color:#f4f4f0;text-decoration:none}
+.contact-info-label{grid-column:1/-1;font-size:8px;letter-spacing:.17em;color:#9a9a91}
+.contact-info-item strong{font-size:clamp(12px,1.5vw,15px);font-weight:500;overflow-wrap:anywhere}
+.contact-info-action{font-size:10px;color:#c8c8bf;align-self:center}
+.contact-info-item:hover strong,.contact-info-item:hover .contact-info-action{color:#fff}
+.contact-content .contact-small{color:#8f8f86}
+.contact-side{justify-content:center;gap:18px;background:#0d0d0d;border-left:1px solid #292929;padding:35px 20px}
+.contact-brand-logo{display:block;width:min(100%,190px);height:auto;aspect-ratio:1;object-fit:contain;border:1px solid #333}
+.contact-side-brand{font-size:14px;letter-spacing:.22em;text-align:center}
+.contact-side .side-bottom{font-size:8px;color:#9d9d94;line-height:1.8}
+.site-footer{grid-template-columns:110px minmax(0,1fr) auto;gap:20px;padding-top:34px;padding-bottom:22px}
+.footer-logo-link{display:flex;align-items:center;justify-content:flex-start;width:100%;max-width:110px}
+.footer-main-logo{display:block;width:100%;height:auto;max-width:110px;aspect-ratio:1;object-fit:contain;border:1px solid #333}
+.footer-brand-copy{display:flex;flex-direction:column;gap:5px}
+.footer-brand-copy strong{font-size:12px;letter-spacing:.17em;color:#f4f4f0}
+.footer-brand-copy>span{font-size:8px;letter-spacing:.2em;color:#9a9a91}
+.site-footer .footer-brand-copy p{font-size:10px;color:#85857e;margin:6px 0 0;text-align:left;line-height:1.6}
+.site-footer .back-top{grid-column:3;grid-row:1}
+.site-footer .footer-bottom{grid-column:1/-1}
+@media(max-width:800px){.contact-panel{grid-template-columns:1fr}.contact-side{border-left:0;border-top:1px solid #292929;padding:28px 20px}.contact-brand-logo{width:110px}.contact-side-brand{font-size:12px}.site-footer{grid-template-columns:76px minmax(0,1fr);gap:15px}.footer-logo-link,.footer-main-logo{max-width:76px}.site-footer .back-top{grid-column:1/-1;grid-row:auto;text-align:left}.site-footer .footer-bottom{grid-column:1/-1}}
+@media(max-width:480px){.contact-info-item{grid-template-columns:1fr;gap:7px}.contact-info-action{margin-top:2px}.site-footer{grid-template-columns:62px minmax(0,1fr)}.footer-logo-link,.footer-main-logo{max-width:62px}.footer-brand-copy strong{font-size:10px}.site-footer .footer-bottom{gap:12px;flex-wrap:wrap}}
