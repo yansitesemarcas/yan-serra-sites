@@ -23,3 +23,14 @@
 .contact-link{font-size:11px;color:#d0d0d0;border-bottom:1px solid #3a3a3a;padding-bottom:5px}
 .contact-link:hover{color:#fff;border-color:#fff}
 @media(max-width:560px){.contact-links{gap:17px}.contact-link{overflow-wrap:anywhere}}
+
+
+/* Condições comerciais: mantém a identidade monocromática do estúdio */
+.terms{border-top:1px solid #1d1d1d}
+.terms-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.terms-card{padding:25px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#0d0d0d}
+.terms-index{display:block;font-size:9px;letter-spacing:.15em;color:#888;margin-bottom:22px}
+.terms-card h3{font-size:18px;letter-spacing:-.04em;margin:0 0 10px}
+.terms-card p{font-size:11px;line-height:1.9;color:#999;margin:0;max-width:520px}
+.terms-wide{grid-column:1/-1}
+@media(max-width:560px){.terms-grid{grid-template-columns:1fr}.terms-wide{grid-column:auto}.terms-card{padding:21px}}
