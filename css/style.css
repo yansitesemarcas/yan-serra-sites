@@ -203,3 +203,13 @@ body.quote-modal-open{overflow:hidden}
 .quote-modal .form-submit{align-items:flex-start}
 .quote-modal .form-submit button{background:#f4f4f0;color:#080808;padding:14px 18px}
 @media(max-width:560px){.quote-modal{padding:8px;align-items:flex-start}.quote-modal-panel{max-height:calc(100svh - 16px);padding:22px 16px}.quote-modal .quote-form{grid-template-columns:1fr;gap:14px}.quote-modal .form-field-wide,.quote-modal .form-submit{grid-column:auto}.quote-modal .form-submit button{width:100%}.quote-modal-panel h2{font-size:29px}}
+
+/* Ajustes de apresentação da marca e do seletor do pacote completo */
+.brand-logo,.intro-logo-image,.about-logo,.contact-brand-logo,.footer-main-logo{mix-blend-mode:screen;background:transparent;}
+.about-logo{width:clamp(115px,16vw,165px);height:clamp(115px,16vw,165px);aspect-ratio:1;object-fit:contain;border-radius:50%;overflow:hidden;border:1px solid #333;}
+.about-logo-wrap{align-items:center;}
+.quote-modal .package-choice-wrap[hidden]{display:none!important;}
+.quote-modal .package-choice-wrap:not([hidden]){display:flex;grid-column:1/-1;margin:0 0 16px;padding:16px;border:1px solid #383838;background:#111;}
+.quote-modal .package-choice-wrap select{width:100%;background:#111;border:1px solid #3b3b3b;border-radius:0;color:#f4f4f0;padding:14px;font:inherit;font-size:12px;}
+.quote-modal .package-choice-wrap select:focus{border-color:#f4f4f0;}
+@media(max-width:560px){.about-logo{width:115px;height:115px;}}
