@@ -177,3 +177,8 @@
 .inline-quote .form-field-wide{grid-column:1/-1}
 .inline-quote .button{cursor:pointer}
 @media(max-width:640px){.inline-quote{padding:1.1rem;border-radius:12px}}
+
+/* Valores visíveis na seleção de serviços */
+.service-price{display:block;font-family:var(--display);font-size:16px;font-weight:700;letter-spacing:-.035em;color:#f4f4f0;margin:-2px 0 12px}
+.service-card .service-price{font-size:15px}
+@media(max-width:480px){.service-card .service-price{font-size:16px}}
