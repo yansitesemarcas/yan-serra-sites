@@ -97,11 +97,13 @@ function closeQuoteModal() {
   quoteModal.hidden = true;
   document.body.classList.remove("quote-modal-open");
 }
-document.querySelectorAll(".service-select[data-service]").forEach(button => {
-  button.addEventListener("click", event => {
-    event.preventDefault();
-    openQuoteModal(button.dataset.service);
-  });
+// Delegação de eventos para garantir que os botões de serviço abram o formulário no celular.
+document.addEventListener("click", event => {
+  const button = event.target.closest(".service-select[data-service]");
+  if (!button) return;
+  event.preventDefault();
+  event.stopPropagation();
+  openQuoteModal(button.dataset.service);
 });
 quoteModal?.querySelectorAll("[data-close-quote]").forEach(button => button.addEventListener("click", closeQuoteModal));
 document.addEventListener("keydown", event => {
