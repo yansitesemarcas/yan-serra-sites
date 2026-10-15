@@ -53,3 +53,75 @@ if ("IntersectionObserver" in window) {
 } else {
   revealTargets.forEach(element => element.classList.add("is-visible"));
 }
+
+
+// Orçamento em janela modal: o cliente permanece na tela do serviço escolhido.
+const quoteModalMarkup = `
+  <div class="quote-modal" id="quote-modal" hidden>
+    <div class="quote-modal-backdrop" data-close-quote></div>
+    <section class="quote-modal-panel" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+      <button class="quote-modal-close" type="button" aria-label="Fechar formulário" data-close-quote>×</button>
+      <p class="eyebrow"><span class="eyebrow-line"></span> SOLICITAÇÃO DE PROJETO</p>
+      <h2 id="quote-modal-title">Conte sobre seu projeto.</h2>
+      <p class="quote-modal-intro">Preencha os dados para preparar uma mensagem completa para o WhatsApp.</p>
+      <div class="quote-modal-service" id="quote-modal-service"></div>
+      <form id="quote-modal-form" class="quote-form">
+        <div class="form-field"><label for="quote-name">Seu nome *</label><input id="quote-name" name="name" required autocomplete="name" placeholder="Seu nome completo"></div>
+        <div class="form-field"><label for="quote-business">Estabelecimento / marca *</label><input id="quote-business" name="business" required placeholder="Nome do negócio"></div>
+        <div class="form-field"><label for="quote-phone">Seu WhatsApp *</label><input id="quote-phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="(DDD) 9XXXX-XXXX"></div>
+        <div class="form-field"><label for="quote-email">E-mail</label><input id="quote-email" name="email" type="email" autocomplete="email" placeholder="voce@email.com"></div>
+        <div class="form-field form-field-wide"><label for="quote-notes">Observações sobre o projeto</label><textarea id="quote-notes" name="notes" placeholder="Conte um pouco sobre o que você precisa..."></textarea></div>
+        <div class="form-submit form-field-wide"><p>Ao continuar, o WhatsApp será aberto com os dados preenchidos para você enviar a solicitação.</p><button class="button button-light" type="submit">Continuar pelo WhatsApp <span>↗</span></button></div>
+      </form>
+    </section>
+  </div>`;
+if (!document.querySelector("#quote-modal")) {
+  document.body.insertAdjacentHTML("beforeend", quoteModalMarkup);
+}
+const quoteModal = document.querySelector("#quote-modal");
+const quoteModalService = document.querySelector("#quote-modal-service");
+const quoteModalForm = document.querySelector("#quote-modal-form");
+let activeServiceKey = null;
+function openQuoteModal(key) {
+  const service = serviceOptions[key];
+  if (!service || !quoteModal) return;
+  activeServiceKey = key;
+  quoteModalService.innerHTML = `<span class="quote-modal-label">SERVIÇO SELECIONADO</span><strong>${service.name}</strong><b>${service.price}</b><p>${service.description}</p>`;
+  quoteModal.hidden = false;
+  document.body.classList.add("quote-modal-open");
+  const nameField = quoteModal.querySelector("#quote-name");
+  if (nameField) nameField.focus({preventScroll:true});
+}
+function closeQuoteModal() {
+  if (!quoteModal) return;
+  quoteModal.hidden = true;
+  document.body.classList.remove("quote-modal-open");
+}
+document.querySelectorAll(".service-select[data-service]").forEach(button => {
+  button.addEventListener("click", event => {
+    event.preventDefault();
+    openQuoteModal(button.dataset.service);
+  });
+});
+quoteModal?.querySelectorAll("[data-close-quote]").forEach(button => button.addEventListener("click", closeQuoteModal));
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && quoteModal && !quoteModal.hidden) closeQuoteModal();
+});
+quoteModalForm?.addEventListener("submit", event => {
+  event.preventDefault();
+  const service = serviceOptions[activeServiceKey];
+  if (!service) return;
+  const data = new FormData(quoteModalForm);
+  const message = [
+    "SOLICITAÇÃO DE PROJETO — YAN SERRA SITES E MARCAS",
+    "",
+    "Serviço: " + service.name,
+    "Investimento anunciado: " + service.price,
+    "Nome: " + data.get("name"),
+    "Estabelecimento / marca: " + data.get("business"),
+    "WhatsApp: " + data.get("phone"),
+    "E-mail: " + (data.get("email") || "Não informado"),
+    "Observações: " + (data.get("notes") || "Não informado")
+  ].join("\n");
+  window.open("https://wa.me/5585988159854?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
+});
