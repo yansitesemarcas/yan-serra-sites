@@ -168,6 +168,7 @@
 .service-select span{margin-left:.4rem}
 .inline-quote{margin-top:clamp(2rem,5vw,4rem);padding:clamp(1.25rem,4vw,3rem);border:1px solid #333;background:#101010;border-radius:18px;scroll-margin-top:24px}
 .inline-quote[hidden]{display:none!important}
+.service-grid[hidden]{display:none!important}
 .inline-quote-heading{max-width:720px;margin-bottom:1.5rem}
 .inline-quote-heading h2{margin:.6rem 0;font-family:Manrope,sans-serif;font-size:clamp(1.8rem,4vw,3rem);line-height:1.1}
 .inline-quote-heading>p:last-child{color:#b7b7b7;line-height:1.7}
