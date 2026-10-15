@@ -1,18 +1,23 @@
-# Yggdrasil — protótipo Android
+# Yggdrasil — assistente pessoal
 
-Protótipo web responsivo com interface futurista, reconhecimento de fala do navegador e síntese de voz do aparelho.
+Protótipo web responsivo para Android, com reconhecimento de fala em português brasileiro e resposta falada pelo navegador. A conversa com IA usa uma função serverless segura.
 
-## Limitações atuais
-Este protótipo ainda **não** está conectado ao ElevenLabs nem a um modelo de IA. As respostas são demonstrativas. O reconhecimento de fala depende do navegador e pode exigir internet.
+## Arquivos
+- `index.html`, `style.css`, `app.js`: interface e captura/reprodução de voz.
+- `api/chat.js`: endpoint de conversa com IA. A chave fica no servidor, não no navegador.
 
-## Teste
-Abra a página por HTTPS no Chrome para Android e permita o microfone.
+## Publicar a IA com Vercel
+O GitHub Pages só publica arquivos estáticos e não executa `api/chat.js`. Para a conversa funcionar:
+1. Entre em Vercel e importe o repositório `yansitesemarcas/yan-serra-sites`.
+2. Nas configurações do projeto, defina **Root Directory** como `yggdrasil`.
+3. Em **Settings → Environment Variables**, crie `OPENAI_API_KEY` com uma chave válida obtida na plataforma da OpenAI. Não publique nem envie essa chave em mensagens ou arquivos.
+4. Opcionalmente, defina `OPENAI_MODEL` para um modelo disponível na sua conta. O padrão do endpoint é `gpt-4o-mini`.
+5. Faça o deploy e abra o domínio gerado pela Vercel. O endpoint precisa estar no mesmo domínio da interface para que `/api/chat` funcione.
 
-## Próximas etapas
-1. Publicar a pasta como página web.
-2. Configurar um backend seguro para o modelo de IA.
-3. Integrar ElevenLabs para voz personalizada.
-4. Adicionar memória com Supabase.
-5. Integrar automações via n8n com confirmações para ações externas.
+O uso da API pode gerar custos conforme a conta e o consumo; hospedagem e acesso ao modelo não são garantidos como gratuitos.
 
-Nunca coloque chaves secretas em arquivos JavaScript enviados ao navegador.
+## Limitações
+- O reconhecimento de fala depende do suporte do navegador e da permissão do microfone.
+- A voz atual é a síntese de voz do navegador em pt-BR; ElevenLabs ainda não está integrado.
+- Este protótipo ainda não tem memória persistente nem automações externas.
+- Nunca coloque chaves secretas em arquivos JavaScript enviados ao navegador.
