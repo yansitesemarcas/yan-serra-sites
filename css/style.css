@@ -73,7 +73,7 @@
 .reason-card>span{font-size:9px;letter-spacing:.16em;color:#888}
 .reason-card h3{font-size:19px;margin:23px 0 9px}
 .reason-card p{font-size:11px;line-height:1.9;color:#999;margin:0;max-width:460px}
-.about-logo-wrap{width:clamp(145px,18vw,190px)!important;height:clamp(145px,18vw,190px)!important;min-height:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;overflow:hidden!important;border-radius:50%!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important}
+.about-logo-wrap{width:clamp(145px,18vw,190px)!important;height:clamp(145px,18vw,190px)!important;min-height:0!important;padding:0!important;border:0!important;background:#111!important;box-shadow:none!important;overflow:hidden!important;border-radius:50%!important;clip-path:circle(50% at 50% 50%)!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important}
 .about-logo-wrap:before,.about-logo-wrap:after{display:none!important;content:none!important}
 .about-logo{display:block;width:100%!important;height:100%!important;max-width:none!important;object-fit:contain!important;object-position:center!important;padding:0!important;border:0!important;border-radius:50%!important;background:transparent!important;mix-blend-mode:screen!important;clip-path:circle(50% at 50% 50%)!important;position:relative;z-index:1}
 @media(max-width:560px){.about-logo-wrap{width:132px!important;height:132px!important}.about-logo{width:100%!important;height:100%!important}}
