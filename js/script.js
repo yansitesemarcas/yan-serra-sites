@@ -16,11 +16,12 @@ if (menuToggle && nav) {
 
 
 const serviceOptions = {
-  landing: {name:"LANDING PAGE",price:"R$ 350–600",description:"Página única para divulgar produto, serviço, oferta ou campanha."},
-  institucional: {name:"SITE INSTITUCIONAL",price:"R$ 600–900",description:"Site profissional para apresentar empresa, serviços, diferenciais e contatos."},
-  cardapio: {name:"CARDÁPIO E PEDIDOS",price:"R$ 700–1.200",description:"Cardápio digital com produtos e preços, com pedidos direcionados ao WhatsApp."},
-  catalogo: {name:"CATÁLOGO DIGITAL",price:"R$ 300–600",description:"Vitrine online para organizar produtos e facilitar a consulta e o contato."},
-  sistema: {name:"SISTEMA SOB MEDIDA",price:"A partir de R$ 1.200",description:"Projeto com cadastros, matrículas, área administrativa ou outras funcionalidades, conforme o escopo."}
+  landing: {name:"LANDING PAGE",price:"R$ 600,00",description:"Página única para divulgar uma oferta, apresentar um serviço ou transformar visitas em contatos."},
+  institucional: {name:"SITE INSTITUCIONAL",price:"R$ 700,00",description:"Site profissional para apresentar empresa, serviços, diferenciais e canais de contato."},
+  cardapio: {name:"CARDÁPIO DIGITAL COM PEDIDOS E PAINEL",price:"R$ 1.000,00",description:"Cardápio digital com produtos, pedidos e painel para administrar o conteúdo do estabelecimento."},
+  catalogo: {name:"CATÁLOGO DIGITAL COM PAINEL",price:"R$ 1.000,00",description:"Vitrine online de produtos com painel para organizar e atualizar o catálogo."},
+  pacote: {name:"PACOTE DE CARDÁPIO OU CATÁLOGO COM MANUTENÇÃO",price:"R$ 1.300,00",description:"Cardápio digital com pedidos e painel ou catálogo digital com painel, incluindo cinco meses de manutenção."},
+  manutencao: {name:"MANUTENÇÃO AVULSA",price:"R$ 85,00 por mês completo",description:"Manutenção contratada separadamente, cobrada por mês completo."}
 };
 const inlineQuote = document.querySelector("#pedido-servico");
 const inlineQuoteForm = document.querySelector("#inline-quote-form");
