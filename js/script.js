@@ -23,53 +23,6 @@ const serviceOptions = {
   pacote: {name:"PACOTE DE CARDÁPIO OU CATÁLOGO COM MANUTENÇÃO",price:"R$ 1.300,00",description:"Cardápio digital com pedidos e painel ou catálogo digital com painel, incluindo cinco meses de manutenção."},
   manutencao: {name:"MANUTENÇÃO AVULSA",price:"R$ 85,00 por mês completo",description:"Manutenção contratada separadamente, cobrada por mês completo."}
 };
-const inlineQuote = document.querySelector("#pedido-servico");
-const inlineQuoteForm = document.querySelector("#inline-quote-form");
-const serviceGrid = document.querySelector(".service-grid");
-const backToServices = document.querySelector("#back-to-services");
-let selectedServiceKey = "";
-function selectService(key) {
-  const selected = serviceOptions[key];
-  if (!selected || !inlineQuote) return;
-  selectedServiceKey = key;
-  document.querySelector("#inline-service-name").textContent = selected.name;
-  document.querySelector("#inline-service-price").textContent = selected.price;
-  document.querySelector("#inline-service-description").textContent = selected.description;
-  document.querySelector("#inline-quote-title").textContent = "Conte sobre seu projeto.";
-  if (serviceGrid) serviceGrid.hidden = true;
-  inlineQuote.hidden = false;
-}
-document.querySelectorAll(".service-select").forEach(button => {
-  button.addEventListener("click", () => selectService(button.dataset.service));
-});
-if (backToServices) {
-  backToServices.addEventListener("click", () => {
-    inlineQuote.hidden = true;
-    if (serviceGrid) serviceGrid.hidden = false;
-  });
-}
-if (inlineQuoteForm) {
-  inlineQuoteForm.addEventListener("submit", event => {
-    event.preventDefault();
-    const data = new FormData(inlineQuoteForm);
-    const selected = serviceOptions[selectedServiceKey];
-    if (!selected) return;
-    const fields = [
-      ["Serviço escolhido", selected.name],
-      ["Investimento estimado", selected.price],
-      ["Nome", data.get("nome")],
-      ["Estabelecimento / marca", data.get("estabelecimento")],
-      ["WhatsApp", data.get("whatsapp")],
-      ["E-mail", data.get("email") || "Não informado"],
-      ["Detalhes do projeto", data.get("detalhes")],
-      ["Observações adicionais", data.get("observacoes") || "Nenhuma"]
-    ];
-    const message = "Olá, Yan! Gostaria de solicitar um orçamento.\n\n" +
-      fields.map(([label, value]) => label + ": " + String(value || "").trim()).join("\n\n");
-    window.open("https://wa.me/5585988159854?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
-  });
-}
-
 const introFollowup = document.querySelector("#intro-followup");
 if (introFollowup) {
   const revealIntroDetails = () => {
