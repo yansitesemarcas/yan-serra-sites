@@ -65,6 +65,7 @@ const quoteModalMarkup = `
       <h2 id="quote-modal-title">Conte sobre seu projeto.</h2>
       <p class="quote-modal-intro">Preencha os dados para preparar uma mensagem completa para o WhatsApp.</p>
       <div class="quote-modal-service" id="quote-modal-service"></div>
+      <form id="quote-modal-form" class="quote-form">
       <div class="form-field form-field-wide package-choice-wrap" id="package-choice-wrap" hidden>
         <label for="package-choice">O que você deseja no pacote completo? *</label>
         <select id="package-choice" name="packageChoice" disabled>
@@ -73,7 +74,7 @@ const quoteModalMarkup = `
           <option value="Catálogo Digital com Painel">Catálogo digital</option>
         </select>
       </div>
-      <form id="quote-modal-form" class="quote-form">
+
         <div class="form-field"><label for="quote-name">Seu nome *</label><input id="quote-name" name="name" required autocomplete="name" placeholder="Seu nome completo"></div>
         <div class="form-field"><label for="quote-business">Estabelecimento / marca *</label><input id="quote-business" name="business" required placeholder="Nome do negócio"></div>
         <div class="form-field"><label for="quote-phone">Seu WhatsApp *</label><input id="quote-phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="(DDD) 9XXXX-XXXX"></div>
