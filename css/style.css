@@ -217,3 +217,8 @@ body.quote-modal-open{overflow:hidden}
 /* Exibe o símbolo YS inteiro no início, sem cortar as bordas da imagem. */
 .intro-monogram{overflow:visible;}
 .intro-logo-mark{width:100%!important;height:100%!important;max-width:100%!important;flex:0 1 auto;object-fit:contain;object-position:center;mix-blend-mode:screen!important;background:transparent!important;}
+
+/* Nossa Intenção: logo completa, isolada e sem moldura quadrada ou circular. */
+.about-logo-wrap{display:flex;align-items:center;justify-content:center;background:transparent;border:0;box-shadow:none;padding:0;min-height:0;}
+.about-logo{display:block;width:clamp(150px,22vw,230px);height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;border:0;border-radius:0;overflow:visible;background:transparent;mix-blend-mode:normal;}
+@media(max-width:560px){.about-logo{width:clamp(140px,48vw,190px);height:auto;}}
