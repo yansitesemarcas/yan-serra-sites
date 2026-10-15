@@ -161,3 +161,19 @@
 .footer-logo-link{max-width:110px;}
 .footer-main-logo{width:100%;height:auto;aspect-ratio:1;object-fit:contain;}
 @media(max-width:560px){.intro-monogram{width:clamp(160px,52vw,210px)}.footer-logo-link,.footer-main-logo{max-width:76px}}
+
+
+/* Formulário de solicitação exibido após escolher um serviço */
+.service-select{font:inherit;background:transparent;border:0;padding:0;text-align:left;cursor:pointer;color:inherit}
+.service-select span{margin-left:.4rem}
+.inline-quote{margin-top:clamp(2rem,5vw,4rem);padding:clamp(1.25rem,4vw,3rem);border:1px solid #333;background:#101010;border-radius:18px;scroll-margin-top:24px}
+.inline-quote[hidden]{display:none!important}
+.inline-quote-heading{max-width:720px;margin-bottom:1.5rem}
+.inline-quote-heading h2{margin:.6rem 0;font-family:Manrope,sans-serif;font-size:clamp(1.8rem,4vw,3rem);line-height:1.1}
+.inline-quote-heading>p:last-child{color:#b7b7b7;line-height:1.7}
+.inline-quote .selected-service-summary{margin:1.25rem 0;padding:1.25rem;border:1px solid #383838;border-radius:12px;background:#171717}
+.inline-quote .quote-form{margin-top:1.5rem}
+.inline-quote .form-field input,.inline-quote .form-field textarea{width:100%;box-sizing:border-box}
+.inline-quote .form-field-wide{grid-column:1/-1}
+.inline-quote .button{cursor:pointer}
+@media(max-width:640px){.inline-quote{padding:1.1rem;border-radius:12px}}
