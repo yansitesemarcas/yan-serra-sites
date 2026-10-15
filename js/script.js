@@ -65,6 +65,14 @@ const quoteModalMarkup = `
       <h2 id="quote-modal-title">Conte sobre seu projeto.</h2>
       <p class="quote-modal-intro">Preencha os dados para preparar uma mensagem completa para o WhatsApp.</p>
       <div class="quote-modal-service" id="quote-modal-service"></div>
+      <div class="form-field form-field-wide package-choice-wrap" id="package-choice-wrap" hidden>
+        <label for="package-choice">O que você deseja no pacote completo? *</label>
+        <select id="package-choice" name="packageChoice" disabled>
+          <option value="">Selecione uma opção</option>
+          <option value="Cardápio Digital com Pedidos e Painel">Cardápio digital</option>
+          <option value="Catálogo Digital com Painel">Catálogo digital</option>
+        </select>
+      </div>
       <form id="quote-modal-form" class="quote-form">
         <div class="form-field"><label for="quote-name">Seu nome *</label><input id="quote-name" name="name" required autocomplete="name" placeholder="Seu nome completo"></div>
         <div class="form-field"><label for="quote-business">Estabelecimento / marca *</label><input id="quote-business" name="business" required placeholder="Nome do negócio"></div>
@@ -87,6 +95,15 @@ function openQuoteModal(key) {
   if (!service || !quoteModal) return;
   activeServiceKey = key;
   quoteModalService.innerHTML = `<span class="quote-modal-label">SERVIÇO SELECIONADO</span><strong>${service.name}</strong><b>${service.price}</b><p>${service.description}</p>`;
+  const packageChoiceWrap = quoteModal.querySelector("#package-choice-wrap");
+  const packageChoice = quoteModal.querySelector("#package-choice");
+  if (packageChoiceWrap && packageChoice) {
+    const isPackage = key === "pacote";
+    packageChoiceWrap.hidden = !isPackage;
+    packageChoice.disabled = !isPackage;
+    packageChoice.required = isPackage;
+    packageChoice.value = "";
+  }
   quoteModal.hidden = false;
   document.body.classList.add("quote-modal-open");
   const nameField = quoteModal.querySelector("#quote-name");
@@ -117,7 +134,7 @@ quoteModalForm?.addEventListener("submit", event => {
   const message = [
     "SOLICITAÇÃO DE PROJETO — YAN SERRA SITES E MARCAS",
     "",
-    "Serviço: " + service.name,
+    "Serviço: " + (activeServiceKey === "pacote" ? "PACOTE COMPLETO — " + quoteModalForm.elements.packageChoice.value : service.name),
     "Investimento anunciado: " + service.price,
     "Nome: " + data.get("name"),
     "Estabelecimento / marca: " + data.get("business"),
