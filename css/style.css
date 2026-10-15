@@ -73,8 +73,10 @@
 .reason-card>span{font-size:9px;letter-spacing:.16em;color:#888}
 .reason-card h3{font-size:19px;margin:23px 0 9px}
 .reason-card p{font-size:11px;line-height:1.9;color:#999;margin:0;max-width:460px}
-.about-logo-wrap{gap:18px}
-.about-logo{display:block;width:clamp(115px,16vw,165px);height:auto;position:relative;z-index:1}
+.about-logo-wrap{width:clamp(145px,18vw,190px)!important;height:clamp(145px,18vw,190px)!important;min-height:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;overflow:hidden!important;border-radius:50%!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important}
+.about-logo-wrap:before,.about-logo-wrap:after{display:none!important;content:none!important}
+.about-logo{display:block;width:100%!important;height:100%!important;max-width:none!important;object-fit:contain!important;object-position:center!important;padding:0!important;border:0!important;border-radius:50%!important;background:transparent!important;mix-blend-mode:screen!important;clip-path:circle(50% at 50% 50%)!important;position:relative;z-index:1}
+@media(max-width:560px){.about-logo-wrap{width:132px!important;height:132px!important}.about-logo{width:100%!important;height:100%!important}}
 .about-logo-wrap>span{font-size:8px;letter-spacing:.2em;color:#aaa;text-align:center;z-index:1}
 @media(max-width:560px){.hero-intro{min-height:calc(100svh - 100px);padding-top:48px;padding-bottom:85px}.intro-logo{width:118px;margin-bottom:22px}.intro-overline{font-size:8px;letter-spacing:.16em}.hero-intro h1{font-size:clamp(34px,9vw,46px)}.hero-intro .hero-bottom{font-size:6px;letter-spacing:.06em}.price-grid,.quote-form,.reasons-grid{grid-template-columns:1fr}.price-card-wide,.form-field-wide,.form-submit{grid-column:auto}.form-submit{align-items:stretch;flex-direction:column}.form-submit button{width:100%}.price-card{min-height:235px}.about-logo{width:115px}}
 @media(prefers-reduced-motion:reduce){.intro-brand,.intro-logo{animation:none}}
