@@ -8,9 +8,10 @@
 <body>
 <main class="app">
 <header><div class="mark">ᛉ</div><div><p class="eyebrow">ASSISTENTE PESSOAL</p><h1>Yggdrasil</h1></div><span class="dot" id="dot"></span></header>
-<section class="core-wrap"><div class="ring ring-a"></div><div class="ring ring-b"></div><button id="talk" class="core"><span class="symbol">ᛟ</span><span id="coreLabel">ATIVAR</span></button></section>
+<section class="core-wrap"><div class="ring ring-a"></div><div class="ring ring-b"></div><button id="talk" class="core" type="button"><span class="symbol">ᛟ</span><span id="coreLabel">ATIVAR</span></button></section>
 <p id="status" class="status" role="status">Sistema pronto</p>
 <section class="conversation"><p class="eyebrow">CONVERSA</p><div id="messages"><article class="message"><b>YG</b><p>Sistemas online. Toque no núcleo e fale comigo.</p></article></div></section>
 <p class="foot">PROTÓTIPO INICIAL · YGGDRASIL</p>
-</main><script src="app.js"></script>
+</main>
+<script src="app.js?v=20261015-1" onerror="document.getElementById('status').textContent='Erro: o arquivo app.js não carregou. Verifique a pasta raiz do projeto na Vercel.';document.getElementById('talk').addEventListener('click',function(){document.getElementById('status').textContent='O JavaScript principal não foi carregado. Verifique a implantação na Vercel.'})"></script>
 </body></html>
