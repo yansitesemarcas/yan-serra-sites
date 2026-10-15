@@ -216,4 +216,4 @@ body.quote-modal-open{overflow:hidden}
 
 /* Exibe o símbolo YS inteiro no início, sem cortar as bordas da imagem. */
 .intro-monogram{overflow:visible;}
-.intro-logo-mark{width:100%!important;height:100%!important;max-width:100%!important;flex:0 1 auto;object-fit:contain;object-position:center;}
+.intro-logo-mark{width:100%!important;height:100%!important;max-width:100%!important;flex:0 1 auto;object-fit:contain;object-position:center;mix-blend-mode:screen!important;background:transparent!important;}
