@@ -25,6 +25,8 @@ const serviceOptions = {
 };
 const inlineQuote = document.querySelector("#pedido-servico");
 const inlineQuoteForm = document.querySelector("#inline-quote-form");
+const serviceGrid = document.querySelector(".service-grid");
+const backToServices = document.querySelector("#back-to-services");
 let selectedServiceKey = "";
 function selectService(key) {
   const selected = serviceOptions[key];
@@ -34,12 +36,18 @@ function selectService(key) {
   document.querySelector("#inline-service-price").textContent = selected.price;
   document.querySelector("#inline-service-description").textContent = selected.description;
   document.querySelector("#inline-quote-title").textContent = "Conte sobre seu projeto.";
+  if (serviceGrid) serviceGrid.hidden = true;
   inlineQuote.hidden = false;
-  inlineQuote.scrollIntoView({behavior:"smooth", block:"start"});
 }
 document.querySelectorAll(".service-select").forEach(button => {
   button.addEventListener("click", () => selectService(button.dataset.service));
 });
+if (backToServices) {
+  backToServices.addEventListener("click", () => {
+    inlineQuote.hidden = true;
+    if (serviceGrid) serviceGrid.hidden = false;
+  });
+}
 if (inlineQuoteForm) {
   inlineQuoteForm.addEventListener("submit", event => {
     event.preventDefault();
