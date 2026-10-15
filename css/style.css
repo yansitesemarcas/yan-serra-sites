@@ -214,6 +214,6 @@ body.quote-modal-open{overflow:hidden}
 .quote-modal .package-choice-wrap select:focus{border-color:#f4f4f0;}
 @media(max-width:560px){.about-logo{width:115px;height:115px;}}
 
-/* Exibe o símbolo YS em destaque no início, recortando a área ao redor da marca. */
-.intro-monogram{overflow:hidden;}
-.intro-logo-mark{width:155%!important;height:155%!important;max-width:none!important;flex:0 0 155%;object-fit:cover;object-position:center;}
+/* Exibe o símbolo YS inteiro no início, sem cortar as bordas da imagem. */
+.intro-monogram{overflow:visible;}
+.intro-logo-mark{width:100%!important;height:100%!important;max-width:100%!important;flex:0 1 auto;object-fit:contain;object-position:center;}
